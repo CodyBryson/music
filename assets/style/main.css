@@ -10694,5 +10694,22 @@ body {
 main {
   flex-grow: 1;
 }
+.titleText{
+  font-family: 'Titillium Web', sans-serif;
+}
+.scrolling-wrapper{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.resultCard{
+  display: inline-block !important;
+  height: 150px !important;
+  width: 150px !important;
+}
+img:hover{
+  cursor:pointer;
+}
+
 
 /*# sourceMappingURL=main.css.map */
