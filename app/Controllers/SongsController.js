@@ -15,8 +15,9 @@ function _drawResults() {
 function _drawPlaylist() {
   let playlist = ''
   ProxyState.playlist.forEach(s => {
-    playlist += `${s.playlistTemplate}`
+    playlist += `${s.resultsTemplate}`
   })
+  document.getElementById('playlist').innerHTML = playlist
 }
 function _drawActive() {
   let template = ''
@@ -70,7 +71,7 @@ export default class SongsController {
     }
   }
   setActive(id) {
-    debugger
+
     songService.setActive(id)
   }
 

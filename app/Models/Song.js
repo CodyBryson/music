@@ -7,7 +7,7 @@ export default class Song {
     this.album = data.collectionName || data.album;
     this.price = data.trackPrice || data.price;
     this.preview = data.previewUrl || data.preview;
-    this._id = data.trackId || data._id;
+    this.id = data.trackId || data._id;
   }
 
   get Template() {
@@ -24,7 +24,7 @@ export default class Song {
                             </audio>
                             <p class="text-center"><b> Buy Now!</b> ${this.price}</p>
                             <button class="btn-outline btn-success"
-                                onclick="app.songController.addSong('${this._id}')">Add To Playlist</button>
+                                onclick="app.songsController.addSong('${this.id}')">Add To Playlist</button>
                         </div>
                     </div>
         `;
@@ -37,8 +37,8 @@ export default class Song {
   }
   get resultsTemplate() {
     return `
-    <div class="card resultCard" style="width: 18rem;">
-                        <img class="card-img-top" src="${this.albumArt}" alt="Card image cap"onclick="app.songsController.setActive('${this._id}')">
+    <div class="card resultCard" >
+                        <img class="card-img-top" src="${this.albumArt}" alt="Card image cap"onclick="app.songsController.setActive('${this.id}')">
                         <div class="card-body">
                             <p class="card-text text-center"><b>${this.title}</b></p>
                         </div>
